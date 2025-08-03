@@ -1,5 +1,7 @@
 from langchain_community.llms import HuggingFaceHub
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 def load_llm():
     # Load Hugging Face token from environment variable
