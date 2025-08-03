@@ -7,3 +7,4 @@ sentence-transformers
 transformers
 langchain_community
 langchain_ollama
+python-dotenv
