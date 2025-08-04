@@ -1,15 +1,13 @@
 from langchain_community.llms import HuggingFaceHub
 import os
 from dotenv import load_dotenv
+
 load_dotenv()
 
 def load_llm():
-    # Load Hugging Face token from environment variable
-    token = os.getenv("HUGGINGFACEHUB_API_TOKEN")
-    if not token:
-        raise ValueError("Missing Hugging Face API token in environment.")
-
     return HuggingFaceHub(
-        repo_id="google/flan-t5-large",
-        model_kwargs={"temperature": 0.5, "max_length": 512}
+        repo_id="google/flan-t5-large",  # or any other valid model
+        model_kwargs={"temperature": 0.5, "max_length": 512},
+        huggingfacehub_api_token=os.getenv("HUGGINGFACEHUB_API_TOKEN"),
+        task="text2text-generation"
     )
