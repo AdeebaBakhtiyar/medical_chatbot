@@ -7,7 +7,7 @@ docs, filenames = load_documents()
 index, embeddings = build_faiss_index(docs)
 
 # Load transformer model
-gen = pipeline("text2text-generation", model="google/flan-t5-large")
+gen = pipeline("text2text-generation", model="google/flan-t5-small")
 
 st.set_page_config(page_title="🧠 Medical Chatbot", layout="centered")
 st.title("🧠 Medical Chatbot")
